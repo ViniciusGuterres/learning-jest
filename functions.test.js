@@ -46,9 +46,17 @@ test('Admin should be in usernames', () => {
 
 test('User fetched name should be Leanne Graham', () => {
     expect.assertions(1);
-    
+
     return fetchUser()
         .then(data => {
             expect(data.name).toBe('Leanne Graham');
         });
+});
+
+test('User fetched name should be Leanne Graham', async () => {
+    expect.assertions(1);
+
+    const data = await fetchUser();
+    
+    expect(data.name).toBe('Leanne Graham');
 });
