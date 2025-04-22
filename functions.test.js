@@ -1,4 +1,4 @@
-const { add, isNull, checkValue, createUser } = require('./functions.js');
+const { add, isNull, checkValue, createUser, fetchUser } = require('./functions.js');
 
 test('Adds 2 + 2 equal 4', () => {
     expect(add(2, 2)).toBe(4);
@@ -42,4 +42,13 @@ test('Admin should be in usernames', () => {
     const usernames = ['joe', 'doe', 'admin'];
 
     expect(usernames).toContain('admin');
+});
+
+test('User fetched name should be Leanne Graham', () => {
+    expect.assertions(1);
+    
+    return fetchUser()
+        .then(data => {
+            expect(data.name).toBe('Leanne Graham');
+        });
 });
