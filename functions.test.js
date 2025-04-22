@@ -1,4 +1,4 @@
-const { add, isNull, checkValue } = require('./functions.js');
+const { add, isNull, checkValue, createUser } = require('./functions.js');
 
 test('Adds 2 + 2 equal 4', () => {
     expect(add(2, 2)).toBe(4);
@@ -14,4 +14,8 @@ test('Should be null', () => {
 
 test('Should be falsy', () => {
     expect(checkValue(null)).toBeFalsy();
+});
+
+test('User should be Joe Doe object', () => {
+    expect(createUser()).toEqual({ firstName: 'Joe', lastName: 'Doe' });
 });
