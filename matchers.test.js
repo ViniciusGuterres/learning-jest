@@ -38,3 +38,19 @@ test('Adding floating point numbers', () => {
     //expect(value).toBe(0.3); // it won't work
     expect(value).toBeCloseTo(0.3);
 });
+
+// Strings
+test('Here is no I in team', () => {
+    expect('team').not.toMatch(/I/i);
+});
+
+test('But there is a "stop" in Christoph', () => {
+    expect('Christoph').toMatch(/stop/i);
+});
+
+// Arrays and iterables
+test('The shopping list has a milk on it', () => {
+    const shoppingLit = ['rice', 'beans', 'pasta', 'meat', 'milk', 'butter'];
+
+    expect(shoppingLit).toContain('milk');
+});
