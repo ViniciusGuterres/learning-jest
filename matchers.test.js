@@ -30,3 +30,11 @@ test('2 + 2', () => {
 
     expect(value).toBe(4);
 });
+
+// Floating
+test('Adding floating point numbers', () => {
+    const value = 0.1 + 0.2;
+    
+    //expect(value).toBe(0.3); // it won't work
+    expect(value).toBeCloseTo(0.3);
+});
