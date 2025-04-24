@@ -1,5 +1,7 @@
 const axios = require('axios');
 
+const jsonPlaceholderEndPoint = 'https://jsonplaceholder.typicode.com/users';
+
 const functions = {
     add: (num1, num2) => num1 + num2,
     isNull: () => null,
@@ -10,7 +12,12 @@ const functions = {
 
         return user;
     },
-    fetchUser: () => axios.get('https://jsonplaceholder.typicode.com/users/1')
+    
+    fetchUser: () => axios.get(`${jsonPlaceholderEndPoint}/1`)
+        .then(res => res.data)
+        .catch(err => err),
+
+    fetchUserById: userId => axios.get(`${jsonPlaceholderEndPoint}/${userId}`)
         .then(res => res.data)
         .catch(err => err),
 };
