@@ -1,4 +1,5 @@
 const { fetchUser } = require('./functions.js');
+const { fetchUserById } = require('./functions.js');
 
 // Promises
 test('The user name is Leanne Graham', () => {
@@ -10,5 +11,9 @@ test('The user name is Leanne Graham', () => {
 
 // Async / await
 test('The user name is Leanne Graham', async () => {
-    const data = await fetchUser();
+    const { name } = await fetchUserById(1);
+
+    expect(name).toBeDefined();
+    expect(name).toBe('Leanne Graham');
 });
+
