@@ -12,7 +12,7 @@ const functions = {
 
         return user;
     },
-    
+    // axios
     fetchUser: () => axios.get(`${jsonPlaceholderEndPoint}/1`)
         .then(res => res.data)
         .catch(err => err),
@@ -20,6 +20,7 @@ const functions = {
     fetchUserById: userId => axios.get(`${jsonPlaceholderEndPoint}/${userId}`)
         .then(res => res.data)
         .catch(err => err),
+    // db
     initDatabase: () => {
         console.log('Init database');
     },
