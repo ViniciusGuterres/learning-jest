@@ -2,15 +2,27 @@ const { initDatabase, closeDatabase } = require ('./functions');
 
 let databaseInitiated = false;
 
-beforeEach(() => {
+// One time setup
+beforeAll(() => {
     initDatabase();
     databaseInitiated = true;
 });
 
-afterEach(() => {
-    closeDatabase();    
+afterAll(() => {
+    closeDatabase();
     databaseInitiated = false;
-})
+});
+
+// Setup each time
+// beforeEach(() => {
+//     initDatabase();
+//     databaseInitiated = true;
+// });
+
+// afterEach(() => {
+//     closeDatabase();    
+//     databaseInitiated = false;
+// })
 
 test('Database is initiated', () => {
     expect(databaseInitiated).toBe(true);
