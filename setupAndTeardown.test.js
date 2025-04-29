@@ -22,7 +22,7 @@ afterAll(() => {
 // afterEach(() => {
 //     closeDatabase();    
 //     databaseInitiated = false;
-// })
+// });
 
 test('Database is initiated', () => {
     expect(databaseInitiated).toBe(true);
