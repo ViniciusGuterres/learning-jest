@@ -20,6 +20,12 @@ const functions = {
     fetchUserById: userId => axios.get(`${jsonPlaceholderEndPoint}/${userId}`)
         .then(res => res.data)
         .catch(err => err),
+    initDatabase: () => {
+        console.log('Init database');
+    },
+    closeDatabase: () => {
+        console.log('Closing database');
+    },
 };
 
 module.exports = functions;
